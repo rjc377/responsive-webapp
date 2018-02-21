@@ -10,7 +10,7 @@ Docker provides the simplest way to run this application assuming Docker, Docker
 
 ## Running the client with Angular CLI
 
-After running the following commands in a terminal from the client directory the application can be accessed at <http://localhost:4200/> but will not display any data until the server is started.
+After running the following commands in a terminal from the client directory, assuming [Angular CLI, Node.js and npm](https://angular.io/guide/quickstart) are installed, the application can be accessed at <http://localhost:4200/> but will not display any data until the server is started.
 
 ```
 npm install
