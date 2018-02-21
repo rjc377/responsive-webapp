@@ -1,0 +1,35 @@
+<div class="navbar navbar-default">
+  <div class="navbar-header">
+    <form>
+      <input type="search" placeholder="Filter dog breeds..." class="form-control search" (keyup)="filter($event)"/>
+    </form>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="list-wrapper">
+    <div class="row-wrapper rounded" *ngFor="let dogBreed of dogBreeds" [hidden]="dogBreed.hidden">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="item">
+            <h4>{{dogBreed.name}}</h4>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="item">
+            <div class="spinner" [hidden]="dogBreed.imageUrl"></div>
+            <img class="rounded" src="{{dogBreed.imageUrl}}" [hidden]="!dogBreed.imageUrl">
+          </div>
+        </div>
+        <div class="col-md-4 ">
+          <div class="item">
+            <h5>Sub Breeds</h5>
+            <div *ngIf="dogBreed.subBreedNames.length === 0">None</div>
+            <div *ngIf="dogBreed.subBreedNames.length !=0">
+              <h6 *ngFor="let subBreedName of dogBreed.subBreedNames">{{subBreedName}}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
